@@ -203,7 +203,7 @@ server <- function(input, output) {
   )
   
   #Create Table with Team Stats
-  output$team_stats <- DT::renderDT({datatable(ncaa_team_stats_2021,
+  output$team_stats <- DT::renderDT({datatable(ncaa_team_stats_2022,
                                                style = 'bootstrap',
                                                options = list(
                                                  columnDefs = list(list(className = 'dt-center', targets = "_all")),
@@ -255,11 +255,11 @@ server <- function(input, output) {
     #Start Simulation Here --------------------------------------
     
     #Set Home Team
-    home_team <- ncaa_team_stats_2021 %>%
+    home_team <- ncaa_team_stats_2022 %>%
       filter(team_name == input$home)
     
     #Set Away Team
-    away_team <- ncaa_team_stats_2021 %>%
+    away_team <- ncaa_team_stats_2022 %>%
       filter(team_name == input$away)
     
     #Set Adjustment
